@@ -38,7 +38,8 @@ The following environment variables need to be set:
 
 WARNING: If you make the server available to more than just your private network, you should definitely put an HTTPS proxy in front of it.
 
-[Node.js](https://nodejs.org/) and npm are required.
+[Node.js](https://nodejs.org/) and npm are required.  
+[Clone](https://help.github.com/articles/cloning-a-repository/) this repository to your machine, then run:
 
 ```bash
 npm install
