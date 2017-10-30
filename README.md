@@ -5,7 +5,6 @@
 [![AppVeyor build status](https://img.shields.io/appveyor/ci/jeysal/ifttt-webhook-shield/master.svg?style=flat-square&label=windows+build)](https://ci.appveyor.com/project/jeysal/ifttt-webhook-shield)
 [![code coverage](https://img.shields.io/codecov/c/github/jeysal/ifttt-webhook-shield/master.svg?style=flat-square)](https://codecov.io/gh/jeysal/ifttt-webhook-shield)
 
-[![npm package](https://img.shields.io/npm/v/ifttt-webhook-shield.svg?style=flat-square)](https://www.npmjs.com/package/ifttt-webhook-shield)
 [![license](https://img.shields.io/github/license/jeysal/ifttt-webhook-shield.svg?style=flat-square)](https://github.com/jeysal/ifttt-webhook-shield/blob/master/LICENSE)
 
 ## The problem
