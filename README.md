@@ -1,4 +1,6 @@
 # ifttt-webhook-shield
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/jeysal/ifttt-webhook-shield.svg)](https://greenkeeper.io/)
 > IFTTT webhook URLs without embedded maker key
 
 [![build status](https://img.shields.io/travis/jeysal/ifttt-webhook-shield/master.svg?style=flat-square)](https://travis-ci.org/jeysal/ifttt-webhook-shield)
