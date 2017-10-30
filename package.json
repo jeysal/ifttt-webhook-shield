@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ifttt-webhook-shield",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Template for a node module",
   "keywords": [
     "ifttt",
