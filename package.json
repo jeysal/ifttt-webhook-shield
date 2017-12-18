@@ -69,7 +69,7 @@
     "flow-bin": "^0.59.0",
     "flow-copy-source": "^1.1.0",
     "flow-typed": "^2.1.2",
-    "jest": "^21.2.1",
+    "jest": "^22.0.0",
     "live-server": "^1.2.0",
     "nock": "^9.0.27",
     "npm-run-all": "^4.0.2",
