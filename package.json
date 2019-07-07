@@ -38,7 +38,6 @@
     "copyflow": "flow-copy-source src dist --ignore '**/*.test.js'",
     "prefix": "prettier --single-quote --trailing-comma all --write {src,test}/**/*.js",
     "fix": "eslint src test --fix",
-    "doc": "documentation readme src/index.js --section=API",
     "start": "node dist/index.js"
   },
   "now": {
@@ -60,7 +59,6 @@
     "babel-eslint": "^8.0.1",
     "babel-jest": "^24.0.0",
     "copyfiles": "^1.2.0",
-    "documentation": "^11.0.1",
     "eslint": "^4.3.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-flowtype": "^2.33.0",
