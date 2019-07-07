@@ -39,7 +39,9 @@ const server = http.createServer((req, res) => {
         )
         .on('error', err => {
           console.error(
-            `IFTTT maker request failed in request context ${req.url}. ${err.toString()}`,
+            `IFTTT maker request failed in request context ${
+              req.url
+            }. ${err.toString()}`,
           );
           res.writeHead(500, { 'content-type': 'text/plain' });
           res.end(`IFTTT maker request failed with error: ${err}`);
