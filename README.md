@@ -61,16 +61,16 @@ This should output `(stdin)= <digest>`. Use that digest to navigate to `localhos
 This time, you should see `Congratulations! You've fired the abc event`, indicating that the request was successful.
 If you give the URL you used here to somebody else, they will only be able to trigger this particular event on your IFTTT maker channel.
 
-### Zeit Now
+### Vercel
 
-This application is ready for deployment on the [Zeit](https://zeit.co/) platform.
+This application is ready for deployment on the [Vercel](https://vercel.com/) platform.
 If you deploy there, your IFTTT webhook shield will instantly be globally available behind a secure HTTPS proxy.
 
-Set up Zeit Now and generate a secret as shown above.
-Then, instead of `npm start`ing locally, create the required `now secret`s and deploy:
+Set up Vercel and then generate a secret as shown above.
+Then, instead of `npm start`ing locally, create the required `vercel secret`s and deploy:
 
 ```bash
-now secrets add ifttt-maker-key YOURKEYHERE
-now secrets add ifttt-webhook-shield-hmac-secret "$(cat secret)"
-now
+vercel secrets add ifttt-maker-key YOURKEYHERE
+vercel secrets add ifttt-webhook-shield-hmac-secret "$(cat secret)"
+vercel
 ```

@@ -4,14 +4,30 @@ eslint-disable no-return-assign,global-require */
 const origEnv = process.env;
 process.env = {
   ...origEnv,
-  PORT: '12345',
   MAKER_KEY: '0000',
   HMAC_SECRET: 'such secret, much secure, very wow.',
 };
+afterAll(() => {
+  process.env = origEnv;
+});
 
+const { createServer } = require('http');
 const rp = require('request-promise-native');
 const nock = require('nock');
-const server = require('.');
+const handler = require('.');
+
+let server;
+beforeAll(done => {
+  server = createServer(handler);
+  server.listen(12345, done);
+});
+afterAll(done => {
+  server.close(done);
+});
+
+afterEach(() => {
+  nock.cleanAll();
+});
 
 ['robots.txt', 'favicon.ico'].forEach(path => {
   test(`404s for ${path}`, async () => {
@@ -45,14 +61,4 @@ test('forwards request with valid digest', async () => {
   });
   expect(resp.statusCode).toBe(200);
   expect(resp.body).toBe('abc triggered');
-});
-
-afterEach(() => {
-  nock.cleanAll();
-});
-
-afterAll(() => {
-  server.close();
-  jest.resetModules();
-  process.env = origEnv;
 });

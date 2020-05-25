@@ -12,3 +12,8 @@ tmp/
 # editors / IDEs
 .idea/
 .vscode/
+
+.vercel
+.env
+/api/
+/public/

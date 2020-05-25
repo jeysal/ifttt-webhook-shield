@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf coverage dist",
+    "clean": "rimraf coverage dist api public",
     "check": "run-p lint typecheck test",
     "lint": "eslint src test",
     "typecheck": "flow check",
@@ -33,19 +33,13 @@
     "servecov": "live-server coverage/lcov-report --port=1717 -q",
     "t": "run-p --race watchtest servecov",
     "build": "babel src -d dist --ignore '**/*.test.js'",
-    "postbuild": "run-p copymeta copyflow",
+    "postbuild": "run-p copymeta copyflow && mkdir -p public api/[event]/[digest] && touch public/index.html && cp -rT dist api/[event]/[digest]/",
     "copymeta": "cp package.json LICENSE README.* dist",
     "copyflow": "flow-copy-source src dist --ignore '**/*.test.js'",
     "prefix": "prettier --single-quote --trailing-comma all --write {src,test}/**/*.js",
     "fix": "eslint src test --fix",
-    "start": "node dist/index.js"
-  },
-  "now": {
-    "env": {
-      "PORT": "80",
-      "MAKER_KEY": "@ifttt-maker-key",
-      "HMAC_SECRET": "@ifttt-webhook-shield-hmac-secret"
-    }
+    "start": "node ./server.js",
+    "deploy": "vercel"
   },
   "dependencies": {
     "request": "^2.83.0",
@@ -73,6 +67,7 @@
     "npm-run-all": "^4.0.2",
     "prettier": "^1.3.1",
     "request-promise-native": "^1.0.5",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "vercel": "^19.0.1"
   }
 }

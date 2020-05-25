@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "env": {
+    "PORT": "80",
+    "API_BASE": "/api",
+    "MAKER_KEY": "@ifttt-maker-key",
+    "HMAC_SECRET": "@ifttt-webhook-shield-hmac-secret"
+  }
+}

@@ -2,7 +2,6 @@
 
 // @flow
 
-const http = require('http');
 const request = require('request');
 const Route = require('route-parser');
 const crypto = require('crypto');
@@ -17,9 +16,11 @@ if (!process.env.MAKER_KEY) {
 }
 const makerKey = process.env.MAKER_KEY || '';
 
-const route = new Route('/:event/:digest');
+const apiBase = process.env.API_BASE || '';
 
-const server = http.createServer((req, res) => {
+const route = new Route(`${apiBase}/:event/:digest`);
+
+const handler = (req: http$IncomingMessage, res: http$ServerResponse) => {
   if (['/robots.txt', '/favicon.ico'].includes(req.url)) {
     res.writeHead(404, { 'content-type': 'text/plain' });
     res.end('Not found');
@@ -55,8 +56,6 @@ const server = http.createServer((req, res) => {
     res.end(err.toString());
     console.warn(`Unauthorized request to ${req.url}`);
   }
-});
+};
 
-server.listen(Number(process.env.PORT) || 8080);
-
-module.exports = server;
+module.exports = handler;
