@@ -1,8 +1,8 @@
 {
   "private": true,
   "name": "ifttt-webhook-shield",
-  "version": "1.0.0",
-  "description": "Template for a node module",
+  "version": "2.0.0",
+  "description": "IFTTT webhook URLs without embedded maker key",
   "keywords": [
     "ifttt",
     "webhook",
@@ -12,7 +12,7 @@
     "forward",
     "hmac"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": {
     "name": "Tim Seckinger",
     "email": "seckinger.tim@gmail.com",
